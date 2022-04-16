@@ -1,0 +1,73 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #22254b;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: #373b69;
+  color: #fff;
+  padding: 15px 50px;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  width: 220px;
+  height: 40px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  padding: 8px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.searchInput {
+  border: none;
+  color: #fff;
+  background-color: transparent;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: lightgrey;
+}
+
+.searchInput:focus::placeholder {
+  color: transparent;
+}
+
+.movieSection {
+  width: 1370px;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 auto;
+  margin: 20px auto;
+}
+
+.singleMovieSec {
+  width: 300px;
+  margin: 30px 20px;
+}
+
+.singleMovieSec img {
+  width: 100%;
+}
