@@ -77,6 +77,8 @@ input:focus {
 
 .singleMovieSec img {
   width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 .movieInfo {
@@ -122,8 +124,8 @@ input:focus {
   max-height: 100%;
   transform: translateY(101%);
   overflow-y: auto;
-  transition: all 0.5s ease-in;
-  opacity: -50;
+  transition: transform 0.3s ease-in;
+  opacity: 0;
 }
 
 .singleMovieSec:hover .overview {
