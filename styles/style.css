@@ -12,7 +12,9 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--primary-color);
+  background: url(https://cutewallpaper.org/21/movie-collage-wallpapers/Collage,-Poster,-Human,-People,-Person-resized-by-Ze-Robot.jpg);
+  background-size: contain;
+  backdrop-filter: brightness(0.25);
   padding: 0;
   margin: 0;
 }
@@ -21,6 +23,7 @@ nav {
   background-color: var(--secondary-color);
   color: #fff;
   padding: 1rem;
+  backdrop-filter: opacity(0.5);
 }
 
 .navWrapper {
@@ -66,6 +69,7 @@ input:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 25px;
 }
 
 .singleMovieSec {
