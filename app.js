@@ -8,7 +8,7 @@ const SEARCH_API =
 
 const form = document.getElementById("form");
 const searchInput = document.getElementById("searchInput");
-const searchIcon = document.querySelector(".searchIcon");
+const main = document.getElementById("main");
 
 getMovies(API_URL);
 
@@ -16,7 +16,46 @@ async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
 
-  console.log(data.results);
+  showMovies(data.results);
+}
+
+function showMovies(movies) {
+  main.innerHTML = "";
+
+  movies.forEach((movie) => {
+    const { title, poster_path, vote_average, overview } = movie;
+
+    const movieElement = document.createElement("div");
+    movieElement.classList.add("singleMovieSec");
+
+    movieElement.innerHTML = ` 
+    
+    <img
+      src="${IMG_PATH + poster_path}"
+      alt="${title}"
+    />
+    <div class="movieInfo">
+      <h3 class="movieTitle">${title}</h3>
+      <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+    </div>
+    <div class="overview">
+      <h3 class="overviewTitle">Overview</h3>
+      ${overview}
+    </div>
+  
+    `;
+    main.appendChild(movieElement);
+  });
+}
+
+function getClassByRate(vote) {
+  if (vote >= 8) {
+    return "green";
+  } else if (vote >= 5) {
+    return "orange";
+  } else {
+    return "red";
+  }
 }
 
 form.addEventListener("submit", (e) => {
