@@ -221,8 +221,5 @@ input:focus {
   right: 0;
   margin-right: 10px;
   cursor: pointer;
-}
-
-.clearImg.disable {
-  display: none;
+  z-index: 10;
 }
