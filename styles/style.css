@@ -69,7 +69,7 @@ input:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 25px;
+  padding-bottom: 30px;
 }
 
 .singleMovieSec {
