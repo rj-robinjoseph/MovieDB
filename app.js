@@ -202,6 +202,8 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const searchTerm = searchInput.value;
+  selectedGenre = [];
+  setGenre();
 
   if (searchTerm && searchTerm !== "") {
     getMovies(SEARCH_API + "&query=" + searchTerm);

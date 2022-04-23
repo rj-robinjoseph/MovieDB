@@ -13,7 +13,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background: url(https://cutewallpaper.org/21/movie-collage-wallpapers/Collage,-Poster,-Human,-People,-Person-resized-by-Ze-Robot.jpg);
-  background-size: contain;
+  background-size: cover;
   backdrop-filter: brightness(0.25);
   padding: 0;
   margin: 0;
@@ -38,32 +38,50 @@ nav {
   height: 40px;
 }
 
-.search {
+/* .search {
   display: flex;
   align-items: center;
   border: 1px solid var(--search-color);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   cursor: pointer;
-}
+} */
 
-.searchInput {
+/* .searchInput {
   border: none;
-  color: #fff;
   background-color: transparent;
 }
 
 textarea:focus,
 input:focus {
   outline: none;
+  background: transparent;
+} */
+
+.searchInput {
+  background-image: url("../img/searchInput.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  text-indent: 20px;
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchInput:focus {
+  outline: 0;
+  background-image: none;
+  text-indent: 0;
+  background-color: var(--primary-color);
 }
 
 .searchInput::placeholder {
-  color: var(--search-color);
-}
-
-.searchInput:focus::placeholder {
-  color: transparent;
+  color: #7378c5;
 }
 
 .movieSection {
