@@ -20,7 +20,8 @@ body {
 }
 
 nav {
-  background-color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.56);
+  backdrop-filter: blur(20px);
   color: #fff;
   padding: 1rem;
   backdrop-filter: opacity(0.5);
@@ -135,4 +136,57 @@ input:focus {
 .singleMovieSec:hover .overview {
   transform: translateY(0);
   opacity: 1;
+}
+
+/*  */
+.cato_bx {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  /* border: 1px solid #fff; */
+  display: flex;
+  align-items: center;
+  padding: 20px 40px 20px 0;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.cato_bx::-webkit-scrollbar {
+  display: none;
+}
+
+.cato_bx button {
+  padding: 10px 30px;
+  background: red;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+  color: #fff;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.tag {
+  padding: 10px 30px;
+  background: red;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+  color: #fff;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  display: inline-block;
+}
+
+.cato_bx button:hover {
+  background: rgb(184, 184, 184, 0.1);
 }
