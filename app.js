@@ -92,6 +92,16 @@ const form = document.getElementById("form");
 const searchInput = document.getElementById("searchInput");
 const tagsEl = document.getElementById("tags");
 
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const current = document.getElementById("current");
+
+var currentPage = 1;
+var nextPage = 2;
+var prevPage = 3;
+var lastUrl = "";
+var totalPages = 100;
+
 var selectedGenre = [];
 
 setGenre();
@@ -148,11 +158,18 @@ function highlightSelection() {
 getMovies(API_URL);
 
 function getMovies(url) {
+  lastUrl = url;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
       if (data.results.length !== 0) {
         showMovies(data.results);
+        currentPage = data.page;
+        nextPage = currentPage + 1;
+        prevPage = currentPage - 1;
+        totalPages = data.total_pages;
+
+        //
       } else {
         main.innerHTML = `<div class="emptyContainer">
         <h1 class="empty">No Results Found</h1>
@@ -220,3 +237,15 @@ form.addEventListener("submit", (e) => {
     window.location.reload();
   }
 });
+
+next.addEventListener(click, () => {
+  if (nextPage <= totalPages) {
+    pageCall(nextPage);
+  }
+});
+
+function pageCall(page) {
+  let urlSplit = lastUrl.split("?");
+  let queryParms = urlSplit[1].split("&");
+  let key = queryParms[queryParms.length - 1].split("=");
+}

@@ -236,11 +236,16 @@ input:focus {
 
 .page {
   margin: 0 20px 20px 20px;
-  color: #fff;
+  color: #000;
+  cursor: pointer;
 }
 
 .page img {
   width: 30px;
+}
+
+.page.disabled {
+  cursor: not-allowed;
 }
 
 .current {
