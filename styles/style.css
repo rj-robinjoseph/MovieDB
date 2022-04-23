@@ -71,6 +71,7 @@ input:focus {
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 30px;
+  height: 100%;
 }
 
 .singleMovieSec {
@@ -139,7 +140,7 @@ input:focus {
 }
 
 /*  */
-.cato_bx {
+.tags {
   position: relative;
   width: 90%;
   height: auto;
@@ -152,23 +153,8 @@ input:focus {
   scroll-behavior: smooth;
 }
 
-.cato_bx::-webkit-scrollbar {
+.tags::-webkit-scrollbar {
   display: none;
-}
-
-.cato_bx button {
-  padding: 10px 30px;
-  background: red;
-  border: none;
-  outline: none;
-  margin-right: 10px;
-  color: #fff;
-  border-radius: 20px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  cursor: pointer;
-  transition: 0.3s linear;
 }
 
 .tag {
@@ -189,4 +175,23 @@ input:focus {
 
 .tag.highlight {
   background: rgb(184, 184, 184, 0.1);
+}
+
+.emptyContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty {
+  color: #fff;
+  font-weight: bold;
+}
+
+.emptyImg {
+  width: 200px;
+  margin-top: 45px;
+  margin-bottom: 200px;
 }

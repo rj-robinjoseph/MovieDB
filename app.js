@@ -87,9 +87,10 @@ const genres = [
     name: "Western",
   },
 ];
+
+const main = document.getElementById("main");
 const form = document.getElementById("form");
 const searchInput = document.getElementById("searchInput");
-const main = document.getElementById("main");
 const tagsEl = document.getElementById("tags");
 
 var selectedGenre = [];
@@ -139,11 +140,19 @@ function highlightSelection() {
 
 getMovies(API_URL);
 
-async function getMovies(url) {
-  const res = await fetch(url);
-  const data = await res.json();
-
-  showMovies(data.results);
+function getMovies(url) {
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.results.length !== 0) {
+        showMovies(data.results);
+      } else {
+        main.innerHTML = `<div class="emptyContainer">
+        <h1 class="empty">No Results Found</h1>
+        <img src="./img/search.png" alt="" class="emptyImg">
+        </div>`;
+      }
+    });
 }
 
 function showMovies(movies) {
