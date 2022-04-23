@@ -223,3 +223,28 @@ input:focus {
   cursor: pointer;
   z-index: 10;
 }
+
+.clearImg.disable {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  margin: 0 20px 20px 20px;
+  color: #fff;
+}
+
+.page img {
+  width: 30px;
+}
+
+.current {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 30px;
+}

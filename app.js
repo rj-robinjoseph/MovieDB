@@ -2,8 +2,7 @@ const API_KEY = "api_key=45ea19d787f462846ede1e9f7540b5a1";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 
-const API_URL =
-  BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY + "&page=1";
+const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
 
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
@@ -104,6 +103,7 @@ function setGenre() {
     t.id = genre.id;
     t.innerText = genre.name;
     t.addEventListener("click", () => {
+      clear.classList.remove("disable");
       if (selectedGenre.length == 0) {
         selectedGenre.push(genre.id);
       } else {
@@ -124,6 +124,13 @@ function setGenre() {
     tagsEl.append(t);
   });
 }
+const clear = document.querySelector(".clearImg");
+clear.addEventListener("click", () => {
+  clear.classList.add("disable");
+  selectedGenre = [];
+  setGenre();
+  getMovies(API_URL);
+});
 
 function highlightSelection() {
   const tags = document.querySelectorAll(".tag");
@@ -137,13 +144,6 @@ function highlightSelection() {
     });
   }
 }
-
-const clear = document.querySelector(".clearImg");
-clear.addEventListener("click", () => {
-  selectedGenre = [];
-  setGenre();
-  getMovies(API_URL);
-});
 
 getMovies(API_URL);
 
