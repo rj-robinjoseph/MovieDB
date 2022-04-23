@@ -158,7 +158,11 @@ function showMovies(movies) {
     movieElement.innerHTML = ` 
     
     <img
-      src="${IMG_PATH + poster_path}"
+      src="${
+        poster_path
+          ? IMG_PATH + poster_path
+          : "https://thumbs.dreamstime.com/b/corrupted-file-document-outline-icon-corrupted-file-document-outline-icon-linear-style-sign-mobile-concept-web-design-bad-116231507.jpg"
+      }"
       alt="${title}"
     />
     <div class="movieInfo">
