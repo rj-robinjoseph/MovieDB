@@ -211,5 +211,18 @@ input:focus {
 .emptyImg {
   width: 200px;
   margin-top: 45px;
-  margin-bottom: 200px;
+  margin-bottom: 335px;
+}
+
+.clearImg {
+  width: 30px;
+  position: absolute;
+  top: 105px;
+  right: 0;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.clearImg.disable {
+  display: none;
 }

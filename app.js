@@ -138,6 +138,13 @@ function highlightSelection() {
   }
 }
 
+const clear = document.querySelector(".clearImg");
+clear.addEventListener("click", () => {
+  selectedGenre = [];
+  setGenre();
+  getMovies(API_URL);
+});
+
 getMovies(API_URL);
 
 function getMovies(url) {
