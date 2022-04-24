@@ -91,6 +91,7 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const searchInput = document.getElementById("searchInput");
 const tagsEl = document.getElementById("tags");
+const overlayContent = document.getElementById("overlayContent");
 
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
@@ -220,7 +221,7 @@ function showMovies(movies) {
     </div>
     <div class="overview">
       <h3 class="overviewTitle">Overview</h3>
-      ${truncate(overview, 50)}
+      ${truncate(overview, 50) + "..."}
       <p class="releaseDate">Release Date: ${release_date}</p>
       <button class="knowMore" id="${id}">Know More</button>
     </div>
@@ -230,7 +231,7 @@ function showMovies(movies) {
 
     document.getElementById(id).addEventListener("click", () => {
       console.log(id);
-      openNav();
+      openNav(movie);
     });
   });
 }
@@ -239,14 +240,60 @@ function truncate(str, no_words) {
   return str.split(" ").splice(0, no_words).join(" ");
 }
 
-/* Open when someone clicks on the span element */
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
+/* Open */
+function openNav(movie) {
+  let id = movie.id;
+  fetch(BASE_URL + "/movie/" + id + "?" + API_KEY)
+    .then((res) => res.json())
+    .then((movieData) => {
+      const {
+        title,
+        poster_path,
+        vote_average,
+        overview,
+        release_date,
+        runtime,
+      } = movieData;
+      overlayContent.innerHTML = `
+      <div class="overlayWrapper">
+          <div class="overlayWrapperLeft">
+            <div class="posterImg">
+            <img
+            src="${
+              poster_path
+                ? IMG_PATH + poster_path
+                : "https://thumbs.dreamstime.com/b/corrupted-file-document-outline-icon-corrupted-file-document-outline-icon-linear-style-sign-mobile-concept-web-design-bad-116231507.jpg"
+            }"
+            alt="${title}"
+          />
+            </div>
+          </div>
+          <div class="overlayWrapperRight">
+            <div class="overlayTitle">
+              <h1>${title}</h1>
+              <span class="${getClassByRate(
+                vote_average
+              )}">${vote_average}</span>
+            </div>
+            <div class="overlayOverview">
+              <p>
+               ${overview}
+              </p>
+            </div>
+            <div class="overlayDetails">
+              <span class="overlayReleaseDate">Release Date: ${release_date}</span>
+              <span class="overlayRunTime">Run Time: ${runtime + "Mins"} </span>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  document.getElementById("myNav").style.width = "100%";
 }
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
+/* Close */
 function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
+  document.getElementById("myNav").style.width = "0%";
 }
 
 function getClassByRate(vote) {
