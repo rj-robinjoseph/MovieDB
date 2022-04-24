@@ -220,7 +220,7 @@ function showMovies(movies) {
     </div>
     <div class="overview">
       <h3 class="overviewTitle">Overview</h3>
-      ${overview}
+      ${truncate(overview, 50)}
       <p class="releaseDate">Release Date: ${release_date}</p>
       <button class="knowMore" id="${id}">Know More</button>
     </div>
@@ -233,6 +233,10 @@ function showMovies(movies) {
       openNav();
     });
   });
+}
+
+function truncate(str, no_words) {
+  return str.split(" ").splice(0, no_words).join(" ");
 }
 
 /* Open when someone clicks on the span element */
