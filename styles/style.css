@@ -395,12 +395,14 @@ input:focus {
 
 .overlayContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   color: #fff;
 }
 
 .overlayWrapper {
   display: flex;
+  margin: 0 auto;
 }
 
 .overlayWrapperLeft {
@@ -427,7 +429,6 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
 }
 
 .overlayOverview p {
@@ -451,4 +452,61 @@ input:focus {
 
 .overlayTitle span.red {
   color: red;
+}
+
+.iframeVid,
+.recommendations {
+  padding: 10px 30px;
+  color: #fff;
+}
+
+.iframeHeading {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+iframe {
+  width: 350px;
+  height: 200px;
+  margin: 0 2px;
+}
+
+.recommendationsWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie p {
+  position: absolute;
+  /* bottom: -15px; */
+  top: 150px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  opacity: 0;
+}
+
+.movie:hover p {
+  opacity: 1;
+}
+
+.movie {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.movie img {
+  width: 350px;
+  height: 200px;
+  margin: 0 2px;
+  object-fit: cover;
 }

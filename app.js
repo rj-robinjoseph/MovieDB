@@ -92,6 +92,7 @@ const form = document.getElementById("form");
 const searchInput = document.getElementById("searchInput");
 const tagsEl = document.getElementById("tags");
 const overlayContent = document.getElementById("overlayContent");
+const overlaySecondContent = document.getElementById("overlaySecondContent");
 
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
@@ -287,6 +288,27 @@ function openNav(movie) {
           </div>
         </div>
       `;
+    });
+
+  fetch(BASE_URL + "/movie/" + id + "/videos?" + API_KEY)
+    .then((res) => res.json())
+    .then((videoData) => {
+      console.log(videoData.results);
+      let iframeContainer = document.querySelector(".iframeVid");
+      let maxClips =
+        videoData.results.length > 3 ? 3 : videoData.results.length;
+
+      for (let i = 0; i < maxClips; i++) {
+        iframeContainer.innerHTML += `
+          <iframe
+              src="https://www.youtube.com/embed/${videoData.results[i].key}"
+              title="${videoData.results[i].name}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          `;
+      }
     });
   document.getElementById("myNav").style.width = "100%";
 }
