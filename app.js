@@ -198,7 +198,7 @@ function showMovies(movies) {
   main.innerHTML = "";
 
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average, overview } = movie;
+    const { title, poster_path, vote_average, overview, id } = movie;
 
     const movieElement = document.createElement("div");
     movieElement.classList.add("singleMovieSec");
@@ -220,11 +220,27 @@ function showMovies(movies) {
     <div class="overview">
       <h3 class="overviewTitle">Overview</h3>
       ${overview}
+      <button class="knowMore" id="${id}">Know More</button>
     </div>
   
     `;
     main.appendChild(movieElement);
+
+    document.getElementById(id).addEventListener("click", () => {
+      console.log(id);
+      openNav();
+    });
   });
+}
+
+/* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
 }
 
 function getClassByRate(vote) {
