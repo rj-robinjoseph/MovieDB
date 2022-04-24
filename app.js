@@ -169,6 +169,21 @@ function getMovies(url) {
         prevPage = currentPage - 1;
         totalPages = data.total_pages;
 
+        current.innerText = currentPage;
+
+        if (currentPage <= 1) {
+          prev.classList.add("disabled");
+          next.classList.remove("disabled");
+        } else if (currentPage >= totalPages) {
+          prev.classList.remove("disabled");
+          next.classList.add("disabled");
+        } else {
+          prev.classList.remove("disabled");
+          next.classList.remove("disabled");
+        }
+
+        window.scroll({ top: 0, left: 0, behavior: "smooth" });
+
         //
       } else {
         main.innerHTML = `<div class="emptyContainer">
@@ -235,6 +250,12 @@ form.addEventListener("submit", (e) => {
     searchInput.value = "";
   } else {
     window.location.reload();
+  }
+});
+
+prev.addEventListener("click", () => {
+  if (prevPage > 0) {
+    pageCall(prevPage);
   }
 });
 

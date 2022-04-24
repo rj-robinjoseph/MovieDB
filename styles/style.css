@@ -177,7 +177,7 @@ input:focus {
 
 .tag {
   padding: 10px 30px;
-  background: red;
+  background: #7378c5;
   border: none;
   outline: none;
   margin-right: 10px;
@@ -235,7 +235,7 @@ input:focus {
 }
 
 .page {
-  margin: 0 20px 20px 20px;
+  margin: 0 35px 20px 35px;
   color: #000;
   cursor: pointer;
 }
@@ -251,5 +251,5 @@ input:focus {
 .current {
   margin-bottom: 20px;
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
 }
