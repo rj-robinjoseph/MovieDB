@@ -251,5 +251,36 @@ input:focus {
 .current {
   margin-bottom: 20px;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 675px) {
+  .singleMovieSec {
+    width: 285px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navWrapper {
+    flex-direction: column;
+  }
+
+  .navLogo {
+    margin-bottom: 15px;
+  }
+
+  .searchInput {
+    padding: 0.5rem 5rem;
+  }
+
+  .singleMovieSec {
+    width: 275px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .searchInput {
+    padding: 0.5rem 3rem;
+  }
 }
