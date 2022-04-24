@@ -198,7 +198,8 @@ function showMovies(movies) {
   main.innerHTML = "";
 
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average, overview, id } = movie;
+    const { title, poster_path, vote_average, overview, id, release_date } =
+      movie;
 
     const movieElement = document.createElement("div");
     movieElement.classList.add("singleMovieSec");
@@ -220,6 +221,7 @@ function showMovies(movies) {
     <div class="overview">
       <h3 class="overviewTitle">Overview</h3>
       ${overview}
+      <p class="releaseDate">Release Date: ${release_date}</p>
       <button class="knowMore" id="${id}">Know More</button>
     </div>
   

@@ -382,3 +382,8 @@ input:focus {
     right: 35px;
   }
 }
+
+.releaseDate {
+  font-size: 15px;
+  font-weight: 900;
+}
