@@ -233,6 +233,8 @@ function showMovies(movies) {
     main.appendChild(movieElement);
 
     document.getElementById(id).addEventListener("click", () => {
+      window.scroll({ top: 0, left: 0, behavior: "smooth" });
+
       console.log(id);
       openNav(movie);
     });
