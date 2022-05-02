@@ -496,8 +496,7 @@ iframe {
 
 .movie {
   flex: 0 0 auto;
-  width: 400px;
-  height: 200px;
+
   text-align: center;
   margin-right: 10px;
   cursor: pointer;

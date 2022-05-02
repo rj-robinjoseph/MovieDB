@@ -316,6 +316,34 @@ function openNav(movie) {
           `;
       }
     });
+
+  fetch(
+    BASE_URL +
+      "/movie/" +
+      id +
+      "/recommendations?" +
+      new URLSearchParams() +
+      API_KEY
+  )
+    .then((res) => res.json())
+    .then((recData) => {
+      console.log(recData.results);
+      let container = document.querySelector(".recommendationsWrapper");
+      for (let i = 0; i < 16; i++) {
+        if (recData.results[i].backdrop_path == null) {
+          i++;
+        }
+        container.innerHTML += `
+        <div class="movie">
+        <img
+          src="${IMG_PATH + recData.results[i].backdrop_path}"
+          alt=""
+        />
+        <p class="movie-title">${recData.results[i].title}</p>
+      </div>
+            `;
+      }
+    });
   document.getElementById("myNav").style.width = "100%";
 }
 
