@@ -329,7 +329,7 @@ function openNav(movie) {
     .then((recData) => {
       console.log(recData.results);
       let container = document.querySelector(".recommendationsWrapper");
-      for (let i = 0; i < 16; i++) {
+      for (let i = 0; i < 20; i++) {
         if (recData.results[i].backdrop_path == null) {
           i++;
         }
