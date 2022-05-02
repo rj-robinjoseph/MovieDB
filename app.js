@@ -8,6 +8,8 @@ const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
 const SEARCH_API = BASE_URL + "/search/movie?" + API_KEY;
 
+const MOVIE_DETAIL = "https://api.themoviedb.org/3/movie";
+
 const genres = [
   {
     id: 28,
@@ -296,7 +298,7 @@ function openNav(movie) {
       console.log(videoData.results);
       let iframeContainer = document.querySelector(".iframeVid");
       let maxClips =
-        videoData.results.length > 3 ? 3 : videoData.results.length;
+        videoData.results.length > 4 ? 4 : videoData.results.length;
 
       for (let i = 0; i < maxClips; i++) {
         iframeContainer.innerHTML += `
