@@ -292,7 +292,9 @@ function openNav(movie) {
       `;
     });
 
-  fetch(BASE_URL + "/movie/" + id + "/videos?" + API_KEY)
+  fetch(
+    BASE_URL + "/movie/" + id + "/videos?" + new URLSearchParams() + API_KEY
+  )
     .then((res) => res.json())
     .then((videoData) => {
       console.log(videoData.results);
@@ -318,6 +320,7 @@ function openNav(movie) {
 /* Close */
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
+  reload = location.reload();
 }
 
 function getClassByRate(vote) {
