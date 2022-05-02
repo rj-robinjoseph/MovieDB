@@ -320,7 +320,8 @@ function openNav(movie) {
 /* Close */
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
-  reload = location.reload();
+
+  window.location.reload();
 }
 
 function getClassByRate(vote) {
