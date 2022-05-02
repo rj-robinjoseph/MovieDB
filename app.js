@@ -321,7 +321,9 @@ function openNav(movie) {
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 
-  window.location.reload();
+  setTimeout(function () {
+    window.location.reload(); // you can pass true to reload function to ignore the client cache and reload from the server
+  }, 1000); //delayTime should be written in milliseconds e.g. 1000 which equals 1 second
 }
 
 function getClassByRate(vote) {
