@@ -295,14 +295,14 @@ function openNav(movie) {
     });
 
   fetch(
-    BASE_URL + "/movie/" + id + "/videos?" + new URLSearchParams() + API_KEY
+    BASE_URL + "/movie/" + id + "/videos?" + new URLSearchParams({}) + API_KEY
   )
     .then((res) => res.json())
     .then((videoData) => {
       console.log(videoData.results);
-      let iframeContainer = document.querySelector(".iframeVid");
-      let maxClips =
-        videoData.results.length > 4 ? 4 : videoData.results.length;
+      let iframeContainer = document.querySelector(".iframe");
+      let maxClips = 4;
+      // videoData.results.length > 4 ? 4 : videoData.results.length;
 
       for (let i = 0; i < maxClips; i++) {
         iframeContainer.innerHTML += `
@@ -353,7 +353,7 @@ function closeNav() {
 
   setTimeout(function () {
     window.location.reload(); // you can pass true to reload function to ignore the client cache and reload from the server
-  }, 1000); //delayTime should be written in milliseconds e.g. 1000 which equals 1 second
+  }, 600); //delayTime should be written in milliseconds e.g. 1000 which equals 1 second
 }
 
 function getClassByRate(vote) {

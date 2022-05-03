@@ -289,6 +289,12 @@ input:focus {
   .singleMovieSec {
     width: 285px;
   }
+
+  .overlayWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -316,6 +322,10 @@ input:focus {
 
   .clearImg {
     top: 160px;
+  }
+
+  .tags {
+    width: auto;
   }
 }
 
@@ -402,7 +412,7 @@ input:focus {
 
 .overlayWrapper {
   display: flex;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .overlayWrapperLeft {
@@ -507,4 +517,62 @@ iframe {
   height: 200px;
   margin: 0 2px;
   object-fit: cover;
+}
+
+@media screen and (max-width: 960px) {
+  .overlayWrapperRight {
+    margin: 0;
+  }
+  .overlayWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .iframeVid,
+  .recommendations {
+    margin: 0 auto;
+    padding: 10px 40px;
+  }
+
+  .iframe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recommendationsWrapper {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .overlayOverview p {
+    font-size: 15px;
+    width: 400px;
+  }
+
+  .overlayTitle h1 {
+    font-size: 1.8em;
+  }
+
+  .overlayDetails span {
+    font-size: 18px;
+  }
+
+  .overlayWrapperRight {
+    width: min-content;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .overlayWrapperRight {
+    width: 320px;
+  }
+
+  .overlayOverview p {
+    width: 300px;
+  }
 }
