@@ -1,4 +1,4 @@
-# MovieDB [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+# MovieDB [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)]
 Movie Database Application using TMDB api.
 
 ![Screenshot 2022-05-08 225649](https://user-images.githubusercontent.com/48469274/167308354-7ee635f1-a096-48ec-9d69-346efc047115.png)
